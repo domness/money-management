@@ -1,7 +1,8 @@
 MoneyManagement::Application.routes.draw do
+  get "user/login"
+  post "user/login"
+  get "user/logout"
+  get "user/welcome"
 
-  resources :logins
-
-  resources :login
-  root :to => "login#index"
+  root :to => "logins#index"
 end
