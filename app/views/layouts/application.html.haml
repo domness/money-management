@@ -15,10 +15,12 @@
         #title
           Money Management
       #content
-        - if session[:user] && session[:user][:admin]
-          #menu
+        #menu
+          = link_to 'Home', user_welcome_path
+          - if session[:user] && session[:user][:admin]
             = link_to 'Admin', admin_index_path
             = link_to 'Manage Bills', bills_path
+              
         = yield
 
       #footer

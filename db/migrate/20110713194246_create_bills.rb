@@ -1,7 +1,7 @@
 class CreateBills < ActiveRecord::Migration
   def self.up
     create_table :bills do |t|
-      t.double :amount
+      t.string :amount
       t.string :name
       t.string :description
       t.date :due

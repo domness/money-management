@@ -1,4 +1,7 @@
 class BillsController < ApplicationController
+  
+  before_filter :admin_required
+  
   # GET /bills
   # GET /bills.xml
   def index
