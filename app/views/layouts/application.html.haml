@@ -14,11 +14,12 @@
             Logged in as: #{session[:user]} (#{link_to "Log out", user_logout_path})
         #title
           Money Management
-      #main
-        #menu
-          /= link_to 'Logout', user_logout_path
-        #content
-          = yield
+      #content
+        - if session[:user] && session[:user][:admin]
+          #menu
+            = link_to 'Admin', admin_index_path
+            = link_to 'Manage Bills', bills_path
+        = yield
 
       #footer
         &copy; #{Date.today.year} TerraCoding

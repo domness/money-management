@@ -6,9 +6,16 @@ class ApplicationController < ActionController::Base
       return true
     end
     flash[:warning] = 'Please login to continue'
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
     redirect_to :controller => "user", :action => "login"
     return false
+  end
+  
+  def admin_required
+    if session[:user] && session[:user][:admin]
+      return true
+    end
+    redirect_to :controller => "user", :action => "welcome"
   end
   
   def current_user
