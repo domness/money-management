@@ -10,13 +10,15 @@
     #wrapper
       #header
         #current-user
-
+          - if session[:user]
+            Logged in as: #{session[:user]} (#{link_to "Log out", user_logout_path})
         #title
-
-      #menu
-
-      #content
-        = yield
+          Money Management
+      #main
+        #menu
+          /= link_to 'Logout', user_logout_path
+        #content
+          = yield
 
       #footer
         &copy; #{Date.today.year} TerraCoding

@@ -1,12 +1,12 @@
 %form{ :action => "login", :method => "post" }
 
-  %p
+  %fieldset
     %label{ :for => "user_username" } Username:
     %input{ :type => "text", :size => "20", :name => "user[username]" }
   
-  %p
+  %fieldset
     %label{ :for => "user_password" } Password:
     %input{ :type => "password", :size => "20", :name => "user[password]" }
   
-  %p
+  %fieldset
     %button{ :type => "submit" } Login

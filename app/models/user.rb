@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
     return u
     nil
   end
+  
+  def to_s
+    username
+  end
 
 end
