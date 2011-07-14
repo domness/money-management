@@ -1,10 +1,3 @@
-= form_for @user_bill do |f|
-  -if @user_bill.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@user_bill.errors.count, "error")} prohibited this user_bill from being saved:"
-      %ul
-        - @user_bill.errors.full_messages.each do |msg|
-          %li= msg
-
-  .actions
-    = f.submit 'Save'
+= semantic_form_for @user_bill do |f|
+  = f.inputs
+  = f.buttons

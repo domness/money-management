@@ -4,15 +4,19 @@
 
 %table
   %tr
+    %th Bill
+    %th User
     %th
     %th
     %th
 
-  - @user_bills.each do |user_bill|
+  - @user_bills.each do |b|
     %tr
-      %td= link_to 'Show', user_bill
-      %td= link_to 'Edit', edit_user_bill_path(user_bill)
-      %td= link_to 'Destroy', user_bill, :confirm => 'Are you sure?', :method => :delete
+      %td= b.bill.name
+      %td= b.user.username
+      %td= link_to 'Show', b
+      %td= link_to 'Edit', edit_user_bill_path(b)
+      %td= link_to 'Destroy', b, :method => :delete
 
 %br
 
