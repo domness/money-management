@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     end
     flash[:warning] = 'Please login to continue'
     session[:return_to] = request.fullpath
-    redirect_to :controller => "user", :action => "login"
+    redirect_to :controller => "users", :action => "login"
     return false
   end
   
@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
     if session[:user] && session[:user][:admin]
       return true
     end
-    redirect_to :controller => "user", :action => "welcome"
+    redirect_to :controller => "users", :action => "welcome"
+    return false
   end
   
   def current_user
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
       session[:return_to] = nil
       redirect_to_url(return_to)
     else
-      redirect_to :controller => "user", :action => "welcome"
+      redirect_to :controller => "users", :action => "welcome"
     end
   end
 end

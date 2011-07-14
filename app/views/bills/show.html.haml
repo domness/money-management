@@ -2,6 +2,22 @@
 
 %p#notice= notice
 
+%p
+  %b Amount:
+  = @bill.amount
+
+%p
+  %b Name:
+  = @bill.name
+
+%p
+  %b Description:
+  = @bill.description
+
+%p
+  %b Due
+  = @bill.due
+
 
 = link_to 'Edit', edit_bill_path(@bill)
 \|

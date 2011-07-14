@@ -1,0 +1,12 @@
+- content_for(:title, 'User')
+
+%p#notice= notice
+
+%p
+  %b Username:
+  = @user.username
+
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

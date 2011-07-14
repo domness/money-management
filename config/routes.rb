@@ -1,11 +1,15 @@
 MoneyManagement::Application.routes.draw do
-  resources :bills
+  
+  match '/users/login' => 'users#login'
+  match '/users/logout' => 'users#logout'
+  match '/users/welcome' => 'users#welcome'
 
-  get "user/login"
-  post "user/login"
-  get "user/logout"
-  get "user/welcome"
+  resources :bills
+  resources :users do
+    post :login
+  end
+    
   get "admin/index"
 
-  root :to => "logins#index"
+  root :to => "users#welcome"
 end
