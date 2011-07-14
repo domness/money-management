@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  
+  has_many :user_bills, :dependent => :destroy
+  has_many :bills, :through => :user_bills
+  
   validates_presence_of :username, :password
   validates_uniqueness_of :username
 

@@ -1,0 +1,9 @@
+- content_for(:title, 'Edit User Bill')
+
+%h1 Editing user_bill
+
+= render 'form'
+
+= link_to 'Show', @user_bill
+\|
+= link_to 'Back', user_bills_path

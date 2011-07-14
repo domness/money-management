@@ -1,0 +1,19 @@
+- content_for(:title, 'User Bills')
+
+%h1 Listing User Bills
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @user_bills.each do |user_bill|
+    %tr
+      %td= link_to 'Show', user_bill
+      %td= link_to 'Edit', edit_user_bill_path(user_bill)
+      %td= link_to 'Destroy', user_bill, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New User bill', new_user_bill_path

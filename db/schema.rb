@@ -10,13 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713194246) do
+ActiveRecord::Schema.define(:version => 20110714172804) do
 
   create_table "bills", :force => true do |t|
     t.string   "amount"
     t.string   "name"
     t.string   "description"
     t.date     "due"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_bills", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "bill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

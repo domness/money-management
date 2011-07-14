@@ -1,0 +1,8 @@
+- content_for(:title, 'User Bill')
+
+%p#notice= notice
+
+
+= link_to 'Edit', edit_user_bill_path(@user_bill)
+\|
+= link_to 'Back', user_bills_path
