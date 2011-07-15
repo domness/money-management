@@ -1,4 +1,7 @@
 class UserBillsController < ApplicationController
+  
+  before_filter :admin_required
+  
   # GET /user_bills
   # GET /user_bills.xml
   def index
