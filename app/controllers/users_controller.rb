@@ -74,14 +74,15 @@ class UsersController < ApplicationController
   end
   
   def login
+    if session[:user]
+      redirect_to(users_welcome_path)
+    end
     if request.post?
       if session[:user] = User.authenticate(params[:user][:username], params[:user][:password])
         flash[:message] = "Login successful"
-        puts 'successful'
-        redirect_to :action => 'welcome'
+        redirect_to(users_welcome_path, :notice => "Login Successful")
       else
-        puts 'failure'
-        flash[:warning] = "Login unsuccessful"
+        redirect_to(users_login_path, :notice => "Login unsuccessful")
       end
     end
   end

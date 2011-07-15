@@ -22,6 +22,14 @@
             = link_to 'Manage Bills', bills_path
             = link_to 'Manage Users', users_path
             = link_to 'User Bills', user_bills_path
+        - if notice
+          .flash
+            .notice
+              %p= notice
+        - if alert
+          .flash
+            .alert
+              %p= alert
               
         = yield
 

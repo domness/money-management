@@ -8,6 +8,7 @@ MoneyManagement::Application.routes.draw do
   match '/users/welcome' => 'users#welcome'
 
   resources :users do
+    get :login
     post :login
   end
     

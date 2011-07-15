@@ -96,7 +96,7 @@ class UserBillsController < ApplicationController
     @user_bill.destroy
 
     respond_to do |format|
-      format.html { redirect_to(user_bills_url) }
+      format.html { redirect_to(user_bills_url, :notice => "User bill was successfully removed") }
       format.xml  { head :ok }
     end
   end
