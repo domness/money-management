@@ -5,6 +5,8 @@
 %table
   %tr
     %th Bill
+    %th Due
+    %th Amount
     %th User
     %th Paid
     %th
@@ -14,6 +16,8 @@
   - @user_bills.each do |b|
     %tr
       %td= b.bill.name
+      %td= b.bill.due
+      %td= b.bill.amount
       %td= b.user.username
       %td= b.paid
       %td= link_to 'Show', b
