@@ -6,6 +6,7 @@
   %tr
     %th Bill
     %th User
+    %th Paid
     %th
     %th
     %th
@@ -14,6 +15,7 @@
     %tr
       %td= b.bill.name
       %td= b.user.username
+      %td= b.paid
       %td= link_to 'Show', b
       %td= link_to 'Edit', edit_user_bill_path(b)
       %td= link_to 'Destroy', b, :method => :delete

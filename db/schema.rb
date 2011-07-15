@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110714172804) do
   create_table "user_bills", :force => true do |t|
     t.integer  "user_id"
     t.integer  "bill_id"
+    t.boolean  "paid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

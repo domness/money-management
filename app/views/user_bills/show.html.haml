@@ -1,6 +1,20 @@
 - content_for(:title, 'User Bill')
 
+%h1 User Bill
+
 %p#notice= notice
+
+%p
+  %b Bill:
+  = @user_bill.bill.name
+  
+%p
+  %b User:
+  = @user_bill.user.username
+
+%p
+  %b Paid:
+  = @user_bill.paid
 
 
 = link_to 'Edit', edit_user_bill_path(@user_bill)

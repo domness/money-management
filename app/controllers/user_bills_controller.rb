@@ -25,7 +25,7 @@ class UserBillsController < ApplicationController
   # GET /user_bills/new.xml
   def new
     @user_bill = UserBill.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user_bill }
@@ -40,17 +40,34 @@ class UserBillsController < ApplicationController
   # POST /user_bills
   # POST /user_bills.xml
   def create
-    @user_bill = UserBill.new(params[:user_bill])
-
-    respond_to do |format|
-      if @user_bill.save
-        format.html { redirect_to(@user_bill, :notice => 'User bill was successfully created.') }
-        format.xml  { render :xml => @user_bill, :status => :created, :location => @user_bill }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user_bill.errors, :status => :unprocessable_entity }
+    
+    
+    if params[:user_bill][:user_id] == ""
+      @users = User.all
+      @users.each do |user|
+        @user_bill = UserBill.new(
+          :paid => params[:user_bill][:paid], 
+          :bill_id => [params[:user_bill][:bill_id]],
+          :user_id => user.id
+        )
+        @user_bill.save
       end
+    else
+      @user_bill = UserBill.new(params[:user_bill])
+      @user_bill.save
     end
+
+    # respond_to do |format|
+    #   if @user_bill.save
+    #     format.html { redirect_to(@user_bill, :notice => 'User bill was successfully created.') }
+    #     format.xml  { render :xml => @user_bill, :status => :created, :location => @user_bill }
+    #   else
+    #     format.html { render :action => "new" }
+    #     format.xml  { render :xml => @user_bill.errors, :status => :unprocessable_entity }
+    #   end
+    # end
+    
+    redirect_to(@user_bill, :notice => 'User bill was successfully created.')
   end
 
   # PUT /user_bills/1

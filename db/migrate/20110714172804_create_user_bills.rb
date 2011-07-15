@@ -3,6 +3,7 @@ class CreateUserBills < ActiveRecord::Migration
     create_table :user_bills do |t|
       t.references :user
       t.references :bill
+      t.boolean :paid
       t.timestamps
     end
   end
