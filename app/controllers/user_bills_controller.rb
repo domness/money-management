@@ -1,6 +1,6 @@
 class UserBillsController < ApplicationController
   
-  before_filter :admin_required
+  before_filter :admin_required, :only => ['index', 'show', 'new', 'edit', 'create', 'update', 'destroy']
   
   # GET /user_bills
   # GET /user_bills.xml
@@ -43,8 +43,6 @@ class UserBillsController < ApplicationController
   # POST /user_bills
   # POST /user_bills.xml
   def create
-    
-    
     if params[:user_bill][:user_id] == ""
       @users = User.all
       @users.each do |user|
@@ -100,4 +98,12 @@ class UserBillsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def mark_as_paid
+    @user_bill = UserBill.find(params[:user_bill_id])
+    @user_bill.paid = true
+    @user_bill.save
+    redirect_to(user_bills_url, :notice => "User bill has now been paid")
+  end
+  
 end

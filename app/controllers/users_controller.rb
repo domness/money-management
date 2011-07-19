@@ -97,7 +97,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user)
     @user_bills = UserBill.where("user_id = ?", @user)
   end
-  
+
   def hidden
   end
 

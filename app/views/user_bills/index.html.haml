@@ -12,6 +12,7 @@
     %th
     %th
     %th
+    %th
 
   - @user_bills.each do |b|
     %tr
@@ -23,6 +24,7 @@
       %td= link_to 'Show', b
       %td= link_to 'Edit', edit_user_bill_path(b)
       %td= link_to 'Destroy', b, :method => :delete
+      %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(b)
 
 %br
 

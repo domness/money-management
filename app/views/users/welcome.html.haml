@@ -9,6 +9,7 @@
     %th Description
     %th Due
     %th Paid
+    %th
 
   - @user_bills.each do |user_bill|
     %tr
@@ -17,3 +18,4 @@
       %td= user_bill.bill.description
       %td= user_bill.bill.due
       %td= user_bill.paid
+      %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(user_bill)
