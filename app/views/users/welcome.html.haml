@@ -1,3 +1,19 @@
 - content_for(:title, 'Welcome')
 
-%p This is the welcome page
+%p Here are your bills:
+
+%table
+  %tr
+    %th Amount
+    %th Name
+    %th Description
+    %th Due
+    %th Paid
+
+  - @user_bills.each do |user_bill|
+    %tr
+      %td= user_bill.bill.amount
+      %td= user_bill.bill.name
+      %td= user_bill.bill.description
+      %td= user_bill.bill.due
+      %td= user_bill.paid
