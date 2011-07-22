@@ -52,7 +52,7 @@ body {
   margin: 0 auto;
   font-size: 13px; }
   #wrapper #header {
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 10px;
     font-size: 13px; }
     #wrapper #header #current-user {
       height: 30px;
@@ -65,17 +65,22 @@ body {
     #wrapper #header #title {
       margin: 0;
       font-size: 31px;
-      line-height: 75px;
       vertical-align: middle;
       color: #333333; }
       #wrapper #header #title img {
         float: left;
         margin-right: 20px; }
+  #wrapper #menu {
+    font-size: 12px;
+    line-height: 30px;
+    margin: 5px 5px 5px 0px; }
+  #wrapper #frame {
+    padding: 5px;
+    background-color: #f3f3f3; }
   #wrapper #content {
     border-color: #cccccc;
     border-style: solid;
     border-width: 1px;
-    border-radius: 5px;
     min-height: 400px;
     background-color: #fefffe;
     font-size: 13px;
@@ -97,26 +102,6 @@ body {
         padding: 0; }
     #wrapper #content ul {
       margin-bottom: 12px; }
-    #wrapper #content #menu {
-      margin-left: auto;
-      margin-right: 0px;
-      text-align: left;
-      color: #b3b3b3;
-      word-spacing: 25px;
-      font-weight: bold;
-      font-size: 21px;
-      background-color: #fefffe;
-      border-bottom: 1px solid #e6e6e6;
-      padding: 0 10px 10px 10px;
-      margin-bottom: 10px; }
-      #wrapper #content #menu a {
-        text-shadow: 0px 0px 10px #e6e6e6;
-        text-decoration: none;
-        color: #666666;
-        word-spacing: 0px; }
-      #wrapper #content #menu a:hover {
-        color: #b3b3b3;
-        background-color: #fefffe; }
   #wrapper #footer {
     text-shadow: 0px 1px white;
     color: #b3b3b3;
@@ -172,34 +157,55 @@ table {
     padding: 3px 5px;
     border: 1px solid #aaaaaa; }
 
-a.button {
-  background: white url(../images/icons/add.png) no-repeat 5px center;
-  border: 1px solid #cccccc;
-  padding: 3px 10px 3px 25px;
-  color: #66695c;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  text-decoration: none; }
-
-a.button:hover {
-  background-color: #f0f0f0;
-  color: #66695c;
-  text-decoration: none; }
-
-a.view {
-  background-image: url(../images/icons/view.png); }
-
-a.back {
-  background-image: url(../images/icons/arrow_left.png); }
-
-a.edit {
-  background-image: url(../images/icons/edit.png); }
-
-a.delete {
-  background-image: url(../images/icons/cancel.png); }
-
-a.manage {
-  background-image: url(../images/icons/cog.png); }
-
 #address {
   margin-left: 20px; }
+
+.button {
+  text-decoration: none;
+  outline: 0;
+  padding: 5px 12px;
+  display: inline;
+  color: #eeeeee;
+  font-weight: bold;
+  text-shadow: 1px 1px #1f272b;
+  border: 1px solid #1c252b;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #232b30;
+  background: -moz-linear-gradient(top, #3d4850 3%, #313d45 4%, #232b30 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, #3d4850), color-stop(4%, #313d45), color-stop(100%, #232b30));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 );
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+
+.button:hover {
+  color: white;
+  background: #4c5a64;
+  background: -moz-linear-gradient(top, #4c5a64 3%, #404f5a 4%, #2e3940 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, #4c5a64), color-stop(4%, #404f5a), color-stop(100%, #2e3940));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4C5A64', endColorstr='#2E3940',GradientType=0 ); }
+
+.button:active {
+  background-position: 0 top;
+  position: relative;
+  top: 1px;
+  color: white;
+  padding: 6px 12px 4px;
+  background: #20282d;
+  background: -moz-linear-gradient(top, #20282d 3%, #252e34 51%, #222a30 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, #20282d), color-stop(51%, #252e34), color-stop(100%, #222a30));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#20282D', endColorstr='#222A30',GradientType=0 );
+  -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1); }
+
+.button-list {
+  list-style: none;
+  padding: 0; }
+
+.button-list li {
+  display: inline;
+  width: 150px;
+  margin: 5px; }

@@ -14,24 +14,26 @@
             Logged in as: #{session[:user]} (#{link_to "Log out", users_logout_path})
         #title
           Money Management
-      #content
-        #menu
-          = link_to 'Home', users_welcome_path
+      #menu
+        %ul.button-list
+          %li= link_to 'Home', users_welcome_path, :class => "button"
           - if session[:user] && session[:user][:admin]
-            = link_to 'Admin', admin_index_path
-            = link_to 'Manage Bills', bills_path
-            = link_to 'Manage Users', users_path
-            = link_to 'User Bills', user_bills_path
-        - if notice
-          .flash
-            .notice
-              %p= notice
-        - if alert
-          .flash
-            .alert
-              %p= alert
+            %li= link_to 'Admin', admin_index_path, :class => "button"
+            %li= link_to 'Manage Bills', bills_path, :class => "button"
+            %li= link_to 'Manage Users', users_path, :class => "button"
+            %li= link_to 'User Bills', user_bills_path, :class => "button"
+      #frame
+        #content
+          - if notice
+            .flash
+              .notice
+                %p= notice
+          - if alert
+            .flash
+              .alert
+                %p= alert
               
-        = yield
+          = yield
 
       #footer
         &copy; #{Date.today.year} TerraCoding
