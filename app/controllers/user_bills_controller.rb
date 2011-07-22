@@ -48,7 +48,7 @@ class UserBillsController < ApplicationController
       @users.each do |user|
         @user_bill = UserBill.new(
           :paid => params[:user_bill][:paid], 
-          :bill_id => [params[:user_bill][:bill_id]],
+          :bill_id => params[:user_bill][:bill_id],
           :user_id => user.id
         )
         @user_bill.save
@@ -103,7 +103,7 @@ class UserBillsController < ApplicationController
     @user_bill = UserBill.find(params[:user_bill_id])
     @user_bill.paid = true
     @user_bill.save
-    redirect_to(user_bills_url, :notice => "User bill has now been paid")
+    redirect_to(:back, :notice => "User bill has now been paid")
   end
   
 end

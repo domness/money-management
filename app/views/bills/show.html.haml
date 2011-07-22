@@ -1,5 +1,7 @@
 - content_for(:title, 'Bill')
 
+%h1 Bill Information
+
 %p#notice= notice
 
 %p
@@ -22,3 +24,18 @@
 = link_to 'Edit', edit_bill_path(@bill)
 \|
 = link_to 'Back', bills_path
+
+%p
+  %h1 Users with this bill
+
+%table
+  %tr
+    %th Username
+    %th Paid
+    %th
+
+  - @user_bills.each do |user_bill|
+    %tr
+      %td= user_bill.user.username
+      %td= user_bill.paid
+      %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(user_bill)
