@@ -6,6 +6,22 @@
   %b Username:
   = @user.username
 
+%h1 Bills
+
+%table
+  %tr
+    %th Amount
+    %th Name
+    %th Description
+    %th Due
+
+  - @user_bills.each do |user_bill|
+    %tr
+      %td= user_bill.bill.amount
+      %td= user_bill.bill.name
+      %td= user_bill.bill.description
+      %td= user_bill.bill.due
+
 
 = link_to 'Edit', edit_user_path(@user)
 \|

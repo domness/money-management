@@ -17,7 +17,7 @@ class BillsController < ApplicationController
   # GET /bills/1.xml
   def show
     @bill = Bill.find(params[:id])
-    @user_bills = UserBill.where("bill_id = ?", [params[:id]])
+    @user_bills = UserBill.where("bill_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

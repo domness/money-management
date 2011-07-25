@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     admin_required
     @user = User.find(params[:id])
+    @user_bills = UserBill.where("user_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
