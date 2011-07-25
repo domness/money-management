@@ -97,9 +97,19 @@ class UsersController < ApplicationController
   def welcome
     @user = User.find(current_user)
     @user_bills = UserBill.where("user_id = ?", @user)
+    @sum = 0
+    @user_bills.each { |b| add_amount(b) }
   end
 
   def hidden
+  end
+  
+  private
+  
+  def add_amount (b)
+    if !b.paid
+      @sum = @sum + b.bill.amount.to_d
+    end
   end
 
 end

@@ -22,3 +22,12 @@
       - else
         %td.red
       %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(user_bill)
+
+%table
+  %tr
+    %th Number of Bills
+    %th Total Due
+  %tr
+    %td= @user_bills.count
+    %td= @sum
+    
