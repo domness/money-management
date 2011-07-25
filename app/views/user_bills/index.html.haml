@@ -16,7 +16,7 @@
 
   - @user_bills.each do |b|      
     %tr
-      %td= b.bill.name
+      %td= link_to b.bill.name, bill_path(b.bill)
       %td= b.bill.due
       %td= b.bill.amount
       %td= b.user.username
