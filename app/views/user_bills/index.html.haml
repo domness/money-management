@@ -20,7 +20,10 @@
       %td= b.bill.due
       %td= b.bill.amount
       %td= b.user.username
-      %td= b.paid
+      - if b.paid
+        %td.green
+      - else
+        %td.red
       %td= link_to 'Show', b
       %td= link_to 'Edit', edit_user_bill_path(b)
       %td= link_to 'Destroy', b, :method => :delete

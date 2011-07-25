@@ -13,6 +13,7 @@
     %th Amount
     %th Name
     %th Description
+    %th Paid
     %th Due
 
   - @user_bills.each do |user_bill|
@@ -20,6 +21,10 @@
       %td= user_bill.bill.amount
       %td= user_bill.bill.name
       %td= user_bill.bill.description
+      - if user_bill.paid
+        %td.green
+      - else
+        %td.red
       %td= user_bill.bill.due
 
 

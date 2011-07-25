@@ -157,6 +157,12 @@ table {
     padding: 3px 5px;
     border: 1px solid #aaaaaa; }
 
+.green {
+  background-color: #81ff5e; }
+
+.red {
+  background-color: #f78183; }
+
 #address {
   margin-left: 20px; }
 

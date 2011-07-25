@@ -18,9 +18,7 @@
       %td= user_bill.bill.description
       %td= user_bill.bill.due
       - if user_bill.paid
-        .paid
-          %td= user_bill.paid
+        %td.green
       - else
-        .unpaid
-          %td= user_bill.paid
+        %td.red
       %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(user_bill)

@@ -37,5 +37,8 @@
   - @user_bills.each do |user_bill|
     %tr
       %td= user_bill.user.username
-      %td= user_bill.paid
+      - if user_bill.paid
+        %td.green
+      - else
+        %td.red
       %td= link_to "Mark as Paid", user_bill_mark_as_paid_path(user_bill)
